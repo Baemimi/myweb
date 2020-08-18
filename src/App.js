@@ -1,14 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {Button, Progress} from 'semantic-ui-react'
+import React from "react";
+import { Button, Image, Divider, Header, Icon, Grid } from "semantic-ui-react";
+
+import Comments from "./comment.js";
+import Buttons from "./buttons.js"
+
+import mini from "./mini.jpg";
 
 function App() {
   return (
-    <div>
-    <p> 안녕하세요</p>
-    <Button primary> 하이하이 </Button>
-    <Progress percent = {66} indicating />
+    <div style = {{backgroundColor : "ivory"}}>
+      <Grid centered>
+        <Grid.Row>
+          <Image
+            src={mini}
+            centered
+            style={{ width: 1600, height: 1100, marginTop: 100 }}
+          />
+        </Grid.Row>
+        <Grid.Row>
+          <br />
+          <Buttons/>
+
+        </Grid.Row>
+      </Grid>
+      <Divider horizontal>
+        <Header as="h4">
+          <Icon name="comment outline" />
+          댓글을 달아주세요.
+        </Header>
+      </Divider>
+
+      <Comments />
+      <Divider horizontal>
+        <Header as="h4">
+          <Icon name="mobile alternate" />
+          Contact Me
+        </Header>
+      </Divider>
+      <br />
+      <br />
+      <div>
+        <Grid centered>
+          <Button circular color="facebook" icon="facebook" onClick = {()=> alert("준비중입니다.")} />
+          <Button circular color="twitter" icon="twitter" onClick = {()=> alert("준비중입니다.")} />
+          <Button circular color="youtube" icon="youtube" onClick = {()=> alert("준비중입니다.")} />
+          <Button circular color="google plus" icon="google plus" onClick = {()=> alert("준비중입니다.")} />
+        </Grid>
+      </div>
     </div>
   );
 }
